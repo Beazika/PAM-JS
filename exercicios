@@ -1,0 +1,186 @@
+
+1-
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+
+
+
+2-
+
+function calcularFatorial(numero) {
+  let fatorial = 1;
+  for (let i = 1; i <= numero; i++) {
+    fatorial *= i;
+  }
+  return fatorial;
+}
+
+// exemplo de uso
+const numero = 5;
+const fatorial = calcularFatorial(numero);
+console.log(`O fatorial de ${numero} é ${fatorial}.`);
+
+
+3- 
+
+let continuar = true;
+
+while (continuar) {
+  const salario = parseFloat(prompt("Digite o salário do funcionário:"));
+
+  let aumento = 0;
+  if (salario <= 500) {
+    aumento = 0.1;
+  } else {
+    aumento = 0.08;
+  }
+
+  const salarioAumentado = salario * (1 + aumento);
+  console.log(`O novo salário é R$ ${salarioAumentado.toFixed(2)}.`);
+
+  const resposta = prompt("Deseja informar um novo salário? (s/n)");
+  continuar = (resposta.toLowerCase() === "s");
+}
+
+
+4- 
+// Pede ao usuário para digitar um número inteiro e armazena em A
+const A = parseInt(prompt("Digite um número inteiro:"));
+
+// Pede ao usuário para digitar outro número inteiro e armazena em C
+const C = parseInt(prompt("Digite outro número inteiro:"));
+
+// Exibe os valores digitados
+console.log(`Os valores digitados foram: A = ${A} e C = ${C}`);
+
+// Pede ao usuário para digitar o sexo
+const sexo = prompt("Digite o sexo (M ou F):");
+
+// Verifica se o sexo é válido e exibe a mensagem correspondente
+if (sexo.toUpperCase() === "M" || sexo.toUpperCase() === "F") {
+  console.log("O sexo é válido.");
+} else {
+  console.log("O sexo é inválido.");
+}
+
+
+5-
+
+// Lê um número fornecido pelo usuário
+const numero = parseInt(prompt("Digite um número:"));
+
+// Verifica se o número está na faixa de 20 a 90 e exibe a mensagem correspondente
+if (numero >= 20 && numero <= 90) {
+  console.log("O número está na faixa de 20 a 90.");
+} else {
+  console.log("O número não está na faixa de 20 a 90.");
+}
+
+
+
+6-
+
+// Lê o valor do salário bruto fornecido pelo usuário
+const salarioBruto = parseFloat(prompt("Digite o valor do salário bruto:"));
+
+// Verifica se o salário bruto é menor ou igual a R$ 500,00 e aplica o aumento correspondente
+let salarioFinal;
+if (salarioBruto <= 500.00) {
+  salarioFinal = salarioBruto * 1.10; // Aumento de 10%
+} else {
+  salarioFinal = salarioBruto; // Salário bruto maior que R$ 500,00, sem aumento
+}
+
+// Exibe o salário final com aumento (caso tenha sido aplicado) ou sem aumento
+console.log(`Salário bruto: R$ ${salarioBruto.toFixed(2)}`);
+if (salarioFinal > salarioBruto) {
+  console.log(`Salário final (com aumento): R$ ${salarioFinal.toFixed(2)}`);
+} else {
+  console.log("Não foi aplicado aumento ao salário.");
+}
+
+
+7-
+
+
+
+let numero = parseInt(prompt("Digite um número inteiro:"));
+
+if (numero % 5 === 0) {
+  console.log(`${numero} é divisível por 5.`);
+} else {
+  console.log(`${numero} não é divisível por 5.`);
+}
+
+
+
+8-
+
+// leitura do salário bruto informado pelo usuário
+let salarioBruto = parseFloat(prompt("Informe o salário bruto:"));
+
+// variáveis para armazenar os valores de INSS e IR a serem descontados
+let inss = 0;
+let ir = 0;
+
+// verificação do valor de INSS a ser descontado
+if (salarioBruto <= 1500) {
+  inss = salarioBruto * 0.08;
+} else {
+  inss = salarioBruto * 0.11;
+}
+
+// verificação do valor de IR a ser descontado
+if (salarioBruto >= 1500) {
+  ir = salarioBruto * 0.05;
+}
+
+// cálculo do salário líquido a partir do salário bruto e dos descontos de INSS e IR
+let salarioLiquido = salarioBruto - inss - ir;
+
+// exibição do resultado
+console.log("Salário bruto: R$ " + salarioBruto.toFixed(2));
+console.log("Desconto de INSS: R$ " + inss.toFixed(2));
+console.log("Desconto de IR: R$ " + ir.toFixed(2));
+console.log("Salário líquido: R$ " + salarioLiquido.toFixed(2));
+
+
+9-
+
+// solicita ao usuário a classe do funcionário e seu salário atual
+let classe = prompt("Informe a classe do funcionário (A, B ou C):");
+let salario = Number(prompt("Informe o salário atual do funcionário:"));
+
+// verifica a classe e aplica o aumento correspondente
+if (classe === "A") {
+  salario *= 1.1;
+} else if (classe === "B") {
+  salario *= 1.15;
+} else if (classe === "C") {
+  salario *= 1.2;
+} else {
+  // se a classe informada for inválida, exibe uma mensagem de erro e encerra o programa
+  console.log("Classe inválida.");
+  return;
+}
+
+// exibe o novo salário com o aumento correspondente
+console.log(`Novo salário: R$ ${salario.toFixed(2)}`);
+
+
+10- 
+
+let soma = 0;
+
+for(let i = 1; i <= 5; i++){
+  let valor = parseFloat(prompt(`Digite o ${i}º valor:`));
+  let quadrado = Math.pow(valor, 2);
+  console.log(`O quadrado de ${valor} é ${quadrado}`);
+  soma += valor;
+}
+
+console.log(`A soma dos cinco valores é ${soma}`);
